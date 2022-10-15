@@ -1,0 +1,72 @@
+$color-background-left-half: #E01B1A;
+$color-background-right-half: #F1F1F1;
+$color-logo: white;
+$color-welcome-text: white;
+
+.reception {
+  background: green;
+
+  position: relative;
+  height: 100%;
+
+  // Левая половина экрана
+  .left-half {
+    background: $color-background-left-half;
+
+    // Позиционирование и размер
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .logo {
+      color: $color-logo;
+      font-size: 4em;
+      margin: 30px 10%;
+      font-weight: bold;
+      font-family: Calibri;
+      font-style: italic;
+    }
+
+    .welcome-msg {
+      color: $color-welcome-text;
+      font-size: 4em;
+      font-weight: bold;
+      font-family: Calibri;
+      position: absolute;
+      top: 40%;
+      margin: -0.625em 0 0 10%;
+
+    }
+  }
+
+  // Правая половина экрана
+  .right-half {
+    background: $color-background-right-half;
+
+    // Позиционирование и размер
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+
+    .inner-block{
+      box-sizing: border-box;
+      width: 60%;
+      height: 100%;
+      margin: 0 auto;
+      padding-top: 100px;
+
+      // Надпись над кнопками
+      .info {
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: 2.5em;
+        width: 100%;
+        margin-bottom: 10%;
+      }
+    }
+  }
+}

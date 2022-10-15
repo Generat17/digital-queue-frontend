@@ -1,0 +1,65 @@
+$color-background: #F1F1F1;
+$color-text-coupon: #E01B1A;
+$color-background-button: white;
+$color-text-button: black;
+$color-border-button: #DDD;
+
+.content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #F1F1F1;
+  text-align: center;
+  font-family: Calibri;
+
+  .coupon {
+    padding-top: 10%;
+
+    h4 {
+      font-size: 3em;
+    }
+
+    h2 {
+      font-size: 9em;
+      color: $color-text-coupon;
+    }
+  }
+
+  .backBtn {
+    box-sizing: border-box;
+    width: 30%;
+    background: $color-background-button;
+    border-radius: 20px;
+    margin: 5% auto 0 auto;
+    color: $color-text-button;
+    text-decoration: none;
+    border: 2px solid $color-border-button;
+
+    h2 {
+      font-size: 2.5em;
+      color: $color-text-button;
+      padding: 20px 0;
+    }
+  }
+
+  .timer {
+    width: 50%;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+
+    h4 {
+      color: $color-text-button;
+      font-size: 1.5em;
+    }
+
+    h3 {
+      color: $color-text-coupon;
+      font-size: 2em;
+    }
+  }
+}
+

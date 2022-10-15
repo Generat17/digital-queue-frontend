@@ -1,0 +1,42 @@
+$color-background-header: #E01B1A;
+
+.header {
+  box-sizing: border-box;
+  height: 100px;
+  width: 100%;
+  background: $color-background-header;
+  display: flex;
+  color: white;
+  align-items: center;
+  font-size: 2.5em;
+
+  h2 {
+    padding: 0 0 0 200px;
+  }
+}
+
+.queue {
+
+
+  .queue-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    h1 {
+      font-size: 4em;
+      padding: 0 0 0 365px;
+    }
+    h2 {
+      font-size: 2.5em;
+      left: 770px;
+      position: absolute;
+    }
+    h3 {
+      font-size: 2.5em;
+      padding: 0 0 0 10%;
+      left: 1700px;
+      position: absolute;
+    }
+  }
+}
