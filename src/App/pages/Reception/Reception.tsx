@@ -32,7 +32,7 @@ const Reception: React.FC<any> = () => {
             очереди
           </div>
           {responsibilityStore.list.map((it) => (
-            <Link to={`/wait/${it.id}`} key={it.id + 2000}>
+            <Link to={`/wait/${it.name}`} key={it.id + 2000}>
               <Button key={it.id} item={it} />
             </Link>
           ))}

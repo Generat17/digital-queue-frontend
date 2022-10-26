@@ -16,8 +16,6 @@ const Scoreboard: React.FC<any> = () => {
 
   useEffect(() => {
     scoreboardStore.getScoreboardList().then();
-    // eslint-disable-next-line no-console
-    console.log(scoreboardStore.queue);
   }, [counter]);
 
   return (

@@ -15,7 +15,7 @@ const Wait: React.FC<any> = () => {
 
   useEffect(() => {
     if (service !== undefined) {
-      waitStore.getCoupon(service).then();
+      waitStore.getTicket(service).then();
     }
   }, []);
 
@@ -30,7 +30,7 @@ const Wait: React.FC<any> = () => {
     <div className="content" key="content">
       <div className="coupon" key="coupon">
         <h4>Номер вашего талона: </h4>
-        <h2>{waitStore.couponNumber}</h2>
+        <h2>{waitStore.ticketNumber}</h2>
       </div>
       <Link to="/reception" className="linkBackBtn">
         <div className="backBtn" key="backBtn">

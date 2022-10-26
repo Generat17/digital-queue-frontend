@@ -10,41 +10,44 @@ import {
   runInAction,
 } from "mobx";
 
-type PrivateFields = "_ticketNumber" | "_meta";
+type PrivateFields = "_accessToken" | "_meta";
 
-type Ticket = {
-  TicketID: number;
+type AccessToken = {
+  AccessToken: string;
 };
 
-export default class WaitStore {
-  private _ticketNumber: number = -1;
+export default class AuthStore {
+  private _accessToken: string = "";
   private readonly apiStore = new ApiStore(BASE_URL);
   private _meta: Meta = Meta.initial;
-
   constructor() {
-    makeAutoObservable<WaitStore, PrivateFields>(this, {
-      _ticketNumber: observable,
+    makeAutoObservable<AuthStore, PrivateFields>(this, {
+      _accessToken: observable,
       _meta: observable,
-      ticketNumber: computed,
+      accessToken: computed,
       meta: computed,
-      getTicket: action,
+      getAccessToken: action,
     });
   }
 
-  get ticketNumber(): number {
-    return this._ticketNumber;
+  get accessToken(): string {
+    return this._accessToken;
   }
 
   get meta(): Meta {
     return this._meta;
   }
 
-  async getTicket(service: string): Promise<void> {
-    const response = await this.apiStore.request<Ticket>({
-      method: HTTPMethod.GET,
-      data: {},
+  async getAccessToken(
+    login: string,
+    password: string,
+    workstation: string
+  ): Promise<void> {
+    const response = await this.apiStore.request<AccessToken>({
+      method: HTTPMethod.POST,
+      data: { login: login, password: password },
       headers: {},
-      endpoint: `/queue/${service}`,
+      endpoint: `/auth/sign-in/${workstation}`,
     });
 
     runInAction(() => {
@@ -52,7 +55,7 @@ export default class WaitStore {
         this._meta = Meta.error;
       }
       try {
-        this._ticketNumber = response.data.TicketID;
+        this._accessToken = response.data.token;
         this._meta = Meta.success;
         return;
       } catch (e) {

@@ -33,6 +33,7 @@ export default class ApiStore implements IApiStore {
       req.body = JSON.stringify(params.data);
       req.headers = {
         ...req.headers,
+        // eslint-disable-next-line
         ["Content-Type"]: "application/json;charset=UTF-8",
       };
     }
@@ -45,8 +46,6 @@ export default class ApiStore implements IApiStore {
   ): Promise<ApiResponse<SuccessT, ErrorT>> {
     try {
       const response = await fetch(...this.getRequestData(params));
-      // eslint-disable-next-line no-console
-      console.log(`${this.baseUrl}${params.endpoint}`);
 
       if (response.ok) {
         return {
