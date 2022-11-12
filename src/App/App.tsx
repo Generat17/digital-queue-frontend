@@ -1,36 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Info from "./pages/Info";
 import Reception from "./pages/Reception";
 import Scoreboard from "./pages/Scoreboard";
+import StartPage from "./pages/StartPage";
 import Test from "./pages/Test";
 import "./App.scss";
 import Wait from "./pages/Wait";
 import Workstation from "./pages/Workstation";
 
 const App = () => {
-  const [accessToken, setAccessToken] = useState<string>("");
-
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Info />} />
+          <Route path="/" element={<StartPage />} />
           <Route path="/reception" element={<Reception />} />
           <Route path="/wait/:service" element={<Wait />} />
           <Route path="/test" element={<Test />} />
           <Route path="/scoreboard" element={<Scoreboard />} />
-          <Route
-            path="/workstation/:workstation"
-            element={
-              <Workstation
-                accessToken={accessToken}
-                setAccessToken={setAccessToken}
-              />
-            }
-          />
+          <Route path="/workstation/:workstationID" element={<Workstation />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,0 +1,17 @@
+$color-background-start-page: #F1F1F1;
+
+.startPage {
+  background: $color-background-start-page;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .startPage-button {
+    height: 100px;
+    width: 50%;
+  }
+
+
+  padding: 50px;
+}

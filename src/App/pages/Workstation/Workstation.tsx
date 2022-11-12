@@ -1,30 +1,80 @@
-import React from "react";
+import React, { createContext, useEffect, useState } from "react";
 
+import AuthStore from "@store/AuthStore";
+import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
 
-import LogIn from "./components/LogIn";
+interface AuthState {
+  authStore: AuthStore;
+}
 
-type WorkstationProps = {
-  accessToken: string;
-  setAccessToken: React.Dispatch<React.SetStateAction<string>>;
-};
+const authStore = new AuthStore();
 
-const Workstation: React.FC<WorkstationProps> = ({
-  accessToken,
-  setAccessToken,
-}) => {
-  const workstation = useParams();
+export const Context = createContext<AuthState>({ authStore });
+
+export const Workstation: React.FC<any> = () => {
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const { workstationID } = useParams();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      authStore
+        .checkAuth(workstationID!, localStorage.getItem("employeeId")!)
+        .then((r) => undefined);
+    }
+  }, [workstationID]);
+  // получить store из контекста, для вложеннных компонент
+  // const {authStore} = useContext(Context);
+
+  if (authStore.isLoading) {
+    return <div>Загрузка...</div>;
+  }
+
+  if (!authStore.isAuth) {
+    return (
+      <Context.Provider value={{ authStore }}>
+        <div>
+          <h1>
+            {authStore.isAuth
+              ? `Пользователь авторизован ${authStore.user.first_name}`
+              : "АВТОРИЗУЙТЕСЬ"}
+          </h1>
+          <input
+            onChange={(e) => setUsername(e.target.value)}
+            value={username}
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            type="password"
+            placeholder="Password"
+          />
+          <button
+            onClick={() => authStore.login(username, password, workstationID!)}
+          >
+            LogIn
+          </button>
+          {/*<button onClick={() => authStore.registration(username, password)}>
+            Регистрация
+          </button>*/}
+        </div>
+      </Context.Provider>
+    );
+  }
+
   return (
     <div>
-      <h1>workstation page</h1>
-      <LogIn
-        accessToken={accessToken}
-        setAccessToken={setAccessToken}
-        workstation={workstation}
-      />
-      <h1>Ваш токен: {accessToken}</h1>
+      <h1>
+        {authStore.isAuth
+          ? `Пользователь авторизован ${authStore.user.first_name}`
+          : "АВТОРИЗУЙТЕСЬ"}
+      </h1>
+      <button onClick={() => authStore.logout()}>Выйти</button>
     </div>
   );
 };
 
-export default Workstation;
+export default observer(Workstation);

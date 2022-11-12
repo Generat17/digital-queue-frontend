@@ -5,27 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23f89e22-0903-4ad3-881b-3979bc8aa73f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/Workstation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/components/Input/Input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/components/Input/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/AuthStore/AuthStore.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/AuthStore/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/ReceptionButton.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/http/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/IEmployee.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/response/AuthResponse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/AuthService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/WorkstationStore/WorkstationStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/WorkstationStore/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/WorkstationStore/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/models/workstationModel/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/models/workstationModel/workstationItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frontend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Info/Info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Info/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Info/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/Reception.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/Reception.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/Reception.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/Reception.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Scoreboard/Scoreboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Scoreboard/Scoreboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Wait/Wait.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Wait/Wait.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/components/Button/Button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/ReceptionButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/components/Button/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Scoreboard/Scoreboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Scoreboard/Scoreboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Wait/Wait.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Wait/Wait.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/Workstation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/Workstation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/store/ApiStore/ApiStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/store/ApiStore/ApiStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/AuthStore/AuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/AuthStore/AuthStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/ResponsibilityStore/ResponsibilityStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ResponsibilityStore/ResponsibilityStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/ScoreboardStore/ScoreboardStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ScoreboardStore/ScoreboardStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/WaitStore/WaitStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/WaitStore/WaitStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/baseURL.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/baseURL.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.paths.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.paths.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,28 +72,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/aliev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\aliev\\Desktop\\digital-queue\\frontend\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "C:\\Users\\aliev\\Desktop\\digital-queue\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/truma/layoutDevelopment/digital-queue/frontend/src/App/pages/StartPage/components/SelectWorkstation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/truma/layoutDevelopment/digital-queue/frontend/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/truma/layoutDevelopment/digital-queue/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation" />
+      <recent name="$PROJECT_DIR$/src/store/models/workstationModel" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aliev\Desktop\digital-queue\frontend\src\App\pages\Workstation\components" />
     </key>
@@ -103,6 +133,25 @@
       <option name="presentableId" value="Default" />
       <updated>1666788164740</updated>
       <workItem from="1666788167367" duration="14908000" />
+      <workItem from="1666947466645" duration="5831000" />
+      <workItem from="1667027983930" duration="981000" />
+      <workItem from="1667156654983" duration="323000" />
+      <workItem from="1667213042748" duration="7925000" />
+      <workItem from="1667507579517" duration="338000" />
+      <workItem from="1667508066417" duration="884000" />
+      <workItem from="1667673509018" duration="3160000" />
+      <workItem from="1667724072771" duration="5783000" />
+      <workItem from="1667768988206" duration="1034000" />
+      <workItem from="1667806005961" duration="11996000" />
+      <workItem from="1667841446885" duration="3350000" />
+      <workItem from="1667850603380" duration="1422000" />
+      <workItem from="1667916464116" duration="1953000" />
+      <workItem from="1668069424129" duration="4482000" />
+      <workItem from="1668196708709" duration="769000" />
+      <workItem from="1668208757276" duration="628000" />
+      <workItem from="1668253362344" duration="4028000" />
+      <workItem from="1668259080749" duration="9674000" />
+      <workItem from="1668281017495" duration="1760000" />
     </task>
     <servers />
   </component>
@@ -119,6 +168,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

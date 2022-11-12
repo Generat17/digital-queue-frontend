@@ -1,66 +1,107 @@
-import ApiStore from "@shared/store/ApiStore";
-import { HTTPMethod } from "@shared/store/ApiStore/types";
-import { BASE_URL } from "@utils/baseURL";
-import { Meta } from "@utils/meta";
-import {
-  action,
-  computed,
-  makeAutoObservable,
-  observable,
-  runInAction,
-} from "mobx";
+import { makeAutoObservable } from "mobx";
 
-type PrivateFields = "_accessToken" | "_meta";
-
-type AccessToken = {
-  AccessToken: string;
-};
+import { IEmployee } from "../../models/IEmployee";
+import AuthService from "../../services/AuthService";
 
 export default class AuthStore {
-  private _accessToken: string = "";
-  private readonly apiStore = new ApiStore(BASE_URL);
-  private _meta: Meta = Meta.initial;
+  user = {} as IEmployee;
+  isAuth = false;
+  isLoading = false;
+
   constructor() {
-    makeAutoObservable<AuthStore, PrivateFields>(this, {
-      _accessToken: observable,
-      _meta: observable,
-      accessToken: computed,
-      meta: computed,
-      getAccessToken: action,
-    });
+    makeAutoObservable(this);
   }
 
-  get accessToken(): string {
-    return this._accessToken;
+  setAuth(bool: boolean) {
+    this.isAuth = bool;
   }
 
-  get meta(): Meta {
-    return this._meta;
+  setUser(user: IEmployee) {
+    this.user = user;
   }
 
-  async getAccessToken(
-    login: string,
-    password: string,
-    workstation: string
-  ): Promise<void> {
-    const response = await this.apiStore.request<AccessToken>({
-      method: HTTPMethod.POST,
-      data: { login: login, password: password },
-      headers: {},
-      endpoint: `/auth/sign-in/${workstation}`,
-    });
+  setLoading(bool: boolean) {
+    this.isLoading = bool;
+  }
 
-    runInAction(() => {
-      if (!response.success) {
-        this._meta = Meta.error;
-      }
-      try {
-        this._accessToken = response.data.token;
-        this._meta = Meta.success;
-        return;
-      } catch (e) {
-        this._meta = Meta.error;
-      }
-    });
+  async login(username: string, password: string, workstationId: string) {
+    try {
+      const response = await AuthService.login(
+        username,
+        password,
+        workstationId
+      );
+      // eslint-disable-next-line no-console
+      console.log(response);
+
+      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("refreshToken", response.data.refreshToken);
+      localStorage.setItem(
+        "employeeId",
+        String(response.data.employee.employee_id)
+      );
+      localStorage.setItem("workstationId", workstationId);
+
+      this.setAuth(true);
+      this.setUser(response.data.employee);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log("error login");
+    }
+  }
+
+  async registration(username: string, password: string) {
+    try {
+      const response = await AuthService.registration(username, password);
+
+      localStorage.setItem("token", response.data.accessToken);
+      this.setAuth(true);
+      this.setUser(response.data.employee);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log("error registration");
+    }
+  }
+
+  async logout() {
+    try {
+      const response = await AuthService.logout(String(this.user.employee_id));
+      // eslint-disable-next-line no-console
+      console.log(response);
+
+      localStorage.removeItem("token");
+      localStorage.removeItem("refreshToken");
+      localStorage.removeItem("employeeId");
+      localStorage.removeItem("workstationId");
+      this.setAuth(false);
+      this.setUser({} as IEmployee);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log("error logout");
+    }
+  }
+
+  async checkAuth(workstationId: string, employeeId: string) {
+    this.setLoading(true);
+    try {
+      const response = await AuthService.refresh(
+        workstationId,
+        employeeId,
+        localStorage.getItem("refreshToken")!
+      );
+
+      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("refreshToken", response.data.refreshToken);
+      localStorage.setItem(
+        "employeeId",
+        String(response.data.employee.employee_id)
+      );
+      localStorage.setItem("workstationId", workstationId);
+      this.setAuth(true);
+      this.setUser(response.data.employee);
+    } catch (e) {
+    } finally {
+      this.setLoading(false);
+    }
   }
 }

@@ -58,7 +58,7 @@ export default class ScoreboardStore implements ILocalStore, IScoreboardStore {
       method: HTTPMethod.GET,
       data: {},
       headers: {},
-      endpoint: `/queue`,
+      endpoint: `/api/queue`,
     });
 
     runInAction(() => {

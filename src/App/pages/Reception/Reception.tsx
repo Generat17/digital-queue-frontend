@@ -5,7 +5,7 @@ import ResponsibilityStore from "@store/ResponsibilityStore";
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 
-import Button from "./components/Button";
+import ReceptionButton from "./components/ReceptionButton";
 
 // Создаем объект mobX store
 const responsibilityStore = new ResponsibilityStore();
@@ -33,7 +33,7 @@ const Reception: React.FC<any> = () => {
           </div>
           {responsibilityStore.list.map((it) => (
             <Link to={`/wait/${it.name}`} key={it.id + 2000}>
-              <Button key={it.id} item={it} />
+              <ReceptionButton key={it.id} item={it} />
             </Link>
           ))}
         </div>

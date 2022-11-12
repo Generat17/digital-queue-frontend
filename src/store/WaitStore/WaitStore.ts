@@ -44,7 +44,7 @@ export default class WaitStore {
       method: HTTPMethod.GET,
       data: {},
       headers: {},
-      endpoint: `/queue/${service}`,
+      endpoint: `/api/queue/${service}`,
     });
 
     runInAction(() => {

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-import AuthStore from "@store/AuthStore";
-import { observer } from "mobx-react-lite";
+import AuthStoreOld from "@store/AuthStore";
 
 import Input from "./components/Input";
 
-const authStore = new AuthStore();
+//const authStore = new AuthStoreOld();
 
 type LogInProps = {
   accessToken: string;
@@ -22,10 +21,10 @@ const LogIn: React.FC<LogInProps> = ({
   const [passwordValue, setPasswordValue] = useState<string>("");
 
   const onClickButton = () => {
-    if (workstation !== undefined) {
+    /*if (workstation !== undefined) {
       authStore.getAccessToken(loginValue, passwordValue, workstation).then();
       setAccessToken(authStore.accessToken);
-    }
+    }*/
   };
 
   // eslint-disable-next-line no-console
@@ -55,4 +54,4 @@ const LogIn: React.FC<LogInProps> = ({
     </div>
   );
 };
-export default observer(LogIn);
+export default LogIn;
