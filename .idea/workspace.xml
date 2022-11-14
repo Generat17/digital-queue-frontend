@@ -5,52 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23f89e22-0903-4ad3-881b-3979bc8aa73f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/ReceptionButton.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/http/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/IEmployee.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/response/AuthResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/AuthService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/WorkstationStore/WorkstationStore.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/WorkstationStore/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/WorkstationStore/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/models/workstationModel/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/models/workstationModel/workstationItem.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/frontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/Workstation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/components/Input/Input.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/Menu/Menu.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/Menu/Menu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/Menu/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/IClient.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/IWorkstation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Info/Info.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Info/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Info/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/Reception.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/Reception.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/Reception.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/Reception.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/components/Button/Button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/components/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/ReceptionButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/components/Button/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Scoreboard/Scoreboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Scoreboard/Scoreboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Wait/Wait.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Wait/Wait.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/ReceptionButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Reception/components/ReceptionButton/ReceptionButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/StartPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/SelectWorkstation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation/components/SelectWorkstationButton/SelectWorkstationButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/Workstation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/Workstation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/components/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/components/Input/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/IEmployee.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IEmployee.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/response/AuthResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/response/AuthResponse.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/store/ApiStore/ApiStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/store/ApiStore/ApiStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/AuthStore/AuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/AuthStore/AuthStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/ResponsibilityStore/ResponsibilityStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ResponsibilityStore/ResponsibilityStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/ScoreboardStore/ScoreboardStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ScoreboardStore/ScoreboardStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/WaitStore/WaitStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/WaitStore/WaitStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/WorkstationStore/WorkstationStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/WorkstationStore/WorkstationStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/models/responsibilityModel/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/responsibilityModel/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/models/responsibilityModel/responsibilityItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/responsibilityModel/responsibilityItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/models/scoreboardModel/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/scoreboardModel/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/models/scoreboardModel/queueItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/scoreboardModel/queueItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/models/workstationModel/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/workstationModel/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/models/workstationModel/workstationItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/workstationModel/workstationItem.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.paths.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.paths.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +72,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
     &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/truma/layoutDevelopment/digital-queue/frontend/src/App/pages/StartPage/components/SelectWorkstation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/truma/layoutDevelopment/digital-queue/frontend/src/store&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
@@ -96,10 +84,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/store" />
+      <recent name="$PROJECT_DIR$/src/store/CustomerManagementStore" />
       <recent name="$PROJECT_DIR$/src/App/pages/StartPage/components/SelectWorkstation" />
       <recent name="$PROJECT_DIR$/src/store/models/workstationModel" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/models" />
       <recent name="C:\Users\aliev\Desktop\digital-queue\frontend\src\App\pages\Workstation\components" />
     </key>
   </component>
@@ -152,6 +143,14 @@
       <workItem from="1668253362344" duration="4028000" />
       <workItem from="1668259080749" duration="9674000" />
       <workItem from="1668281017495" duration="1760000" />
+      <workItem from="1668327847265" duration="2852000" />
+      <workItem from="1668330871578" duration="18647000" />
+      <workItem from="1668362219456" duration="4000" />
+      <workItem from="1668366265411" duration="3880000" />
+      <workItem from="1668370841593" duration="2176000" />
+      <workItem from="1668397868387" duration="2088000" />
+      <workItem from="1668424582978" duration="433000" />
+      <workItem from="1668440402990" duration="1791000" />
     </task>
     <servers />
   </component>

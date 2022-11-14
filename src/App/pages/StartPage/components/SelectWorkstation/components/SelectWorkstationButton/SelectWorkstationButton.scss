@@ -1,24 +1,27 @@
 $color-background-button: white;
 $color-text-button: black;
 $color-border-button: #DDD;
+$color-background-left-half: #E01B1A;
 
 .selectWorkstationButton {
   box-sizing: border-box;
-  width: 100%;
-  height: 100px;
   background: $color-background-button;
-  border-radius: 20px;
-  margin: 20px auto;
-  padding: 0 30px;
-  position: relative;
+  border-radius: 10px;
+  padding: 5px 20px;
   border: 2px solid $color-border-button;
 
   h2 {
-    position: absolute;
     font-family: Calibri;
-    top: 50%;
-    margin-top: -0.625em;
-    font-size: 2em;
+    font-size: 1.6em;
     color: $color-text-button;
+  }
+}
+
+.selectWorkstationButton:hover {
+  background: $color-background-left-half;
+  h2 {
+    font-family: Calibri;
+    font-size: 1.6em;
+    color: white;
   }
 }

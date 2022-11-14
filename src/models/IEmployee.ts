@@ -9,4 +9,5 @@ export interface IEmployee {
   status: number;
   refresh_token: string;
   expires_at: number;
+  workstation_id: number;
 }

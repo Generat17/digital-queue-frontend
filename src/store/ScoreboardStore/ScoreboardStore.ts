@@ -1,3 +1,8 @@
+import {
+  normalizeQueueItem,
+  QueueItemApi,
+  QueueItemModel,
+} from "@models/scoreboardModel";
 import { HTTPMethod } from "@shared//store/ApiStore/types";
 import ApiStore from "@shared/store/ApiStore";
 import {
@@ -6,11 +11,6 @@ import {
   linearizeCollection,
   normalizeCollection,
 } from "@shared/store/models/collection";
-import {
-  normalizeQueueItem,
-  QueueItemApi,
-  QueueItemModel,
-} from "@store/models/scoreboardModel";
 import { IScoreboardStore } from "@store/ScoreboardStore/types";
 import { BASE_URL } from "@utils/baseURL";
 import { Meta } from "@utils/meta";

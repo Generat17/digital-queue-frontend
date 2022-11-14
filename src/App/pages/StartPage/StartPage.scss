@@ -1,17 +1,60 @@
 $color-background-start-page: #F1F1F1;
+$color-background-left-half: #E01B1A;
+$color-border-button: #DDD;
 
-.startPage {
+.start-page {
   background: $color-background-start-page;
-  position: relative;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 
-  .startPage-button {
-    height: 100px;
-    width: 50%;
+  .start-page-header {
+    box-sizing: border-box;
+    background: $color-background-left-half;
+    text-align: center;
+    padding: 30px;
+
+    h1 {
+      color: white;
+      font-weight: bold;
+      font-family: Calibri;
+      font-style: italic;
+      font-size: 45px;
+    }
   }
 
+  .start-page-content {
+    box-sizing: border-box;
+    margin-top: 30px;
+    height: 80%;
 
-  padding: 50px;
+    .start-page-content-select {
+      margin: 0 auto;
+      height: 100%;
+      box-sizing: border-box;
+      width: 650px;
+
+      .start-page-content-select-true {
+        height: 100%;
+      }
+    }
+
+    h1 {
+      box-sizing: border-box;
+      color: black;
+      width: 100%;
+      background: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px solid $color-border-button;
+    }
+
+    h1:hover {
+      background: $color-background-left-half;
+      color: white;
+      cursor: pointer;
+      border: 2px solid white;
+    }
+  }
 }

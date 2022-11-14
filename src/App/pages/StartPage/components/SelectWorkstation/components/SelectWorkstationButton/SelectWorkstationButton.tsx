@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./SelectWorkstationButton.scss";
-import { WorkstationModel } from "@store/models/workstationModel";
+import { WorkstationModel } from "@models/workstationModel";
 
 type SelectWorkstationButtonProps = {
   item: WorkstationModel;

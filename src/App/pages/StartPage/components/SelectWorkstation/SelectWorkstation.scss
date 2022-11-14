@@ -1,4 +1,10 @@
-.selectWorkstation {
-  height: 60%;
-  width: 100%;
+.select-workstation {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 80%;
+
+  a {
+    height: 50px;
+  }
 }

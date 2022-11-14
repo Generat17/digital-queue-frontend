@@ -1,15 +1,28 @@
-import { makeAutoObservable } from "mobx";
-
-import { IEmployee } from "../../models/IEmployee";
-import AuthService from "../../services/AuthService";
+import { IClient } from "@models/IClient";
+import { IEmployee } from "@models/IEmployee";
+import { IWorkstation } from "@models/IWorkstation";
+import AuthService from "@services/AuthService";
+import ApiStore from "@shared/store/ApiStore";
+import { HTTPMethod } from "@shared/store/ApiStore/types";
+import { BASE_URL } from "@utils/baseURL";
+import { Meta } from "@utils/meta";
+import { makeAutoObservable, runInAction } from "mobx";
 
 export default class AuthStore {
+  private _meta: Meta = Meta.initial;
   user = {} as IEmployee;
+  workstation = {} as IWorkstation;
+  client = {} as IClient;
   isAuth = false;
   isLoading = false;
+  private readonly apiStore = new ApiStore(BASE_URL);
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  get meta(): Meta {
+    return this._meta;
   }
 
   setAuth(bool: boolean) {
@@ -18,6 +31,14 @@ export default class AuthStore {
 
   setUser(user: IEmployee) {
     this.user = user;
+  }
+
+  setClient(client: IClient) {
+    this.client = client;
+  }
+
+  setWorkstation(workstation: IWorkstation) {
+    this.workstation = workstation;
   }
 
   setLoading(bool: boolean) {
@@ -44,6 +65,7 @@ export default class AuthStore {
 
       this.setAuth(true);
       this.setUser(response.data.employee);
+      this.setWorkstation(response.data.workstation);
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log("error login");
@@ -99,9 +121,38 @@ export default class AuthStore {
       localStorage.setItem("workstationId", workstationId);
       this.setAuth(true);
       this.setUser(response.data.employee);
+      this.setWorkstation(response.data.workstation);
     } catch (e) {
     } finally {
       this.setLoading(false);
     }
+  }
+
+  async getClient(): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<IClient>({
+      method: HTTPMethod.POST,
+      data: {},
+      headers: {},
+      endpoint: `/auth/employee/client`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+        // eslint-disable-next-line no-console
+        console.log("error getClient");
+      }
+      try {
+        this.setClient(response.data);
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+        // eslint-disable-next-line no-console
+        console.log("error getClient");
+      }
+    });
   }
 }

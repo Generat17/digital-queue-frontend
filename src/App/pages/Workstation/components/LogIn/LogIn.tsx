@@ -1,56 +1,57 @@
-import React, { useState } from "react";
-
-import AuthStoreOld from "@store/AuthStore";
+import React from "react";
 
 import Input from "./components/Input";
 
-//const authStore = new AuthStoreOld();
+import "./LogIn.scss";
 
 type LogInProps = {
-  accessToken: string;
-  setAccessToken: React.Dispatch<React.SetStateAction<string>>;
-  workstation: any;
+  username: string;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
+
+  password: string;
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
+
+  workstationId: string;
+
+  onClick: () => void;
 };
 
 const LogIn: React.FC<LogInProps> = ({
-  accessToken,
-  setAccessToken,
-  workstation,
+  username,
+  setUsername,
+  password,
+  setPassword,
+  workstationId,
+  onClick,
 }) => {
-  const [loginValue, setLoginValue] = useState<string>("");
-  const [passwordValue, setPasswordValue] = useState<string>("");
-
-  const onClickButton = () => {
-    /*if (workstation !== undefined) {
-      authStore.getAccessToken(loginValue, passwordValue, workstation).then();
-      setAccessToken(authStore.accessToken);
-    }*/
-  };
-
-  // eslint-disable-next-line no-console
-  console.log(accessToken);
-
   return (
-    <div>
-      <h1>Введите ваш логин:</h1>
-      <Input
-        placeholder="login"
-        name={"loginInput"}
-        setInputValue={setLoginValue}
-        inputValue={loginValue}
-        type="text"
-        key="loginInput"
-      />
-      <h1>Введите ваш пароль:</h1>
-      <Input
-        placeholder="password"
-        name={"passwordInput"}
-        setInputValue={setPasswordValue}
-        inputValue={passwordValue}
-        type="password"
-        key="passwordInput"
-      />
-      <button onClick={onClickButton}>Отправить</button>
+    <div className="workstation-login">
+      <div className="workstation-login-header">
+        <h1>Авторизация в рабочей станции ID:{workstationId}</h1>
+      </div>
+      <div className="workstation-login-content">
+        <h2>Введите ваш логин:</h2>
+        <Input
+          placeholder="username"
+          name={"loginInput"}
+          setInputValue={setUsername}
+          inputValue={username}
+          type="text"
+          key="loginInput"
+        />
+        <h2>Введите ваш пароль:</h2>
+        <Input
+          placeholder="password"
+          name={"passwordInput"}
+          setInputValue={setPassword}
+          inputValue={password}
+          type="password"
+          key="passwordInput"
+        />
+        <div className="workstation-login-content-button">
+          <button onClick={onClick}>Войти</button>
+        </div>
+      </div>
     </div>
   );
 };

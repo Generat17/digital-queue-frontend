@@ -1,3 +1,8 @@
+import {
+  normalizeWorkstation,
+  WorkstationApi,
+  WorkstationModel,
+} from "@models/workstationModel";
 import { HTTPMethod } from "@shared//store/ApiStore/types";
 import ApiStore from "@shared/store/ApiStore";
 import {
@@ -17,12 +22,6 @@ import {
   observable,
   runInAction,
 } from "mobx";
-
-import {
-  normalizeWorkstation,
-  WorkstationApi,
-  WorkstationModel,
-} from "../models/workstationModel";
 
 type PrivateFields = "_list" | "_meta";
 

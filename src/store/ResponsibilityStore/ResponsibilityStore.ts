@@ -1,3 +1,8 @@
+import {
+  normalizeResponsibility,
+  ResponsibilityApi,
+  ResponsibilityModel,
+} from "@models/responsibilityModel";
 import { HTTPMethod } from "@shared//store/ApiStore/types";
 import ApiStore from "@shared/store/ApiStore";
 import {
@@ -6,11 +11,6 @@ import {
   linearizeCollection,
   normalizeCollection,
 } from "@shared/store/models/collection";
-import {
-  normalizeResponsibility,
-  ResponsibilityApi,
-  ResponsibilityModel,
-} from "@store/models/responsibilityModel";
 import { IResponsibilityStore } from "@store/ResponsibilityStore/types";
 import { BASE_URL } from "@utils/baseURL";
 import { Meta } from "@utils/meta";

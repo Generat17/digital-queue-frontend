@@ -37,7 +37,10 @@ export default class ApiStore implements IApiStore {
       req.headers = {
         ...req.headers,
         ["Content-Type"]: "application/json;charset=UTF-8",
+        ["Authorization"]: "Bearer " + localStorage.getItem("token")!,
       };
+      // eslint-disable-next-line no-console
+      console.log(localStorage.getItem("token")!);
     }
 
     return [endpoint, req];

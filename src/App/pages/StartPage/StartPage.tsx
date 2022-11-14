@@ -22,31 +22,47 @@ const StartPage: React.FC<any> = () => {
   console.log(workstationStore.list);
 
   return (
-    <div className="startPage" key="StartPage">
-      <Link to={`/scoreboard`} key="scoreboard" className="startPage-button">
-        <button>
-          <h1>Табло (общее информационное табло)</h1>
-        </button>
-      </Link>
+    <div className="start-page" key="start-page">
+      <div className="start-page-header">
+        <h1>Меню выбора сервиса</h1>
+      </div>
+      <div className="start-page-content">
+        <div className="start-page-content-select">
+          {buttonState ? (
+            <div className="start-page-content-select-true">
+              <h1
+                onClick={() => {
+                  buttonState ? setButtonState(false) : setButtonState(true);
+                }}
+              >
+                Авторизация сотрудника
+              </h1>
+              <SelectWorkstation workstationList={workstationStore.list} />
+            </div>
+          ) : (
+            <div className="start-page-content-select-false">
+              <div>
+                <Link to={`/scoreboard`} key="scoreboard">
+                  <h1>Табло (общее информационное табло)</h1>
+                </Link>
+              </div>
+              <div>
+                <Link to={`/reception`} key="reception">
+                  <h1>Киоск электронной очереди</h1>
+                </Link>
+              </div>
 
-      <Link to={`/reception`} key="reception" className="startPage-button">
-        <button>
-          <h1>Киоск электронной очереди</h1>
-        </button>
-      </Link>
-
-      <button
-        key="buttonSelectWorkstation"
-        onClick={() => {
-          buttonState ? setButtonState(false) : setButtonState(true);
-        }}
-        className="startPage-button"
-      >
-        Вход в систему (для сотрудников)
-      </button>
-      {buttonState && (
-        <SelectWorkstation workstationList={workstationStore.list} />
-      )}
+              <h1
+                onClick={() => {
+                  buttonState ? setButtonState(false) : setButtonState(true);
+                }}
+              >
+                Авторизация сотрудника
+              </h1>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

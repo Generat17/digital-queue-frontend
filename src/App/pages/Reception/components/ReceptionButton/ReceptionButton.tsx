@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./ReceptionButton.scss";
-import { ResponsibilityModel } from "@store/models/responsibilityModel";
+import { ResponsibilityModel } from "@models/responsibilityModel";
 
 type ReceptionButtonProps = {
   item: ResponsibilityModel;

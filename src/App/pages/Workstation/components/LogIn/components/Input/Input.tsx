@@ -1,5 +1,7 @@
 import React, { ChangeEvent } from "react";
 
+import "./Input.scss";
+
 type InputProps = {
   placeholder?: string;
   name: string;
