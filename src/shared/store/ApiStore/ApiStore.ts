@@ -25,9 +25,6 @@ export default class ApiStore implements IApiStore {
       headers: { ...params.headers },
     };
 
-    // eslint-disable-next-line no-console
-    console.log(endpoint);
-
     if (params.method === HTTPMethod.GET) {
       endpoint = `${endpoint}?${qs.stringify(params.data)}`;
     }
@@ -36,11 +33,9 @@ export default class ApiStore implements IApiStore {
       req.body = JSON.stringify(params.data);
       req.headers = {
         ...req.headers,
-        ["Content-Type"]: "application/json;charset=UTF-8",
-        ["Authorization"]: "Bearer " + localStorage.getItem("token")!,
+        "Content-Type": "application/json;charset=UTF-8",
+        Authorization: "Bearer " + localStorage.getItem("token")!,
       };
-      // eslint-disable-next-line no-console
-      console.log(localStorage.getItem("token")!);
     }
 
     return [endpoint, req];

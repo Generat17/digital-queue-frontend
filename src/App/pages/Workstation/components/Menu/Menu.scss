@@ -88,5 +88,23 @@ $color-background-content: #F1F1F1;
     width: 100%;
     height: 100px;
 
+    .workstation-menu-footer-button-start {
+      background: #52c938;
+    }
+
+    .workstation-menu-footer-button-wait {
+      background: #e6ed28;
+    }
+
+    .workstation-menu-footer-button-end {
+      background: #d18c8c;
+    }
+
+    button {
+      margin-left: 50px;
+      margin-top: 8px;
+      padding: 30px;
+    }
+
   }
 }

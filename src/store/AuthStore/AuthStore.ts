@@ -33,6 +33,10 @@ export default class AuthStore {
     this.user = user;
   }
 
+  setStatusEmployee(status: number) {
+    this.user.status = status;
+  }
+
   setClient(client: IClient) {
     this.client = client;
   }
@@ -52,8 +56,6 @@ export default class AuthStore {
         password,
         workstationId
       );
-      // eslint-disable-next-line no-console
-      console.log(response);
 
       localStorage.setItem("token", response.data.accessToken);
       localStorage.setItem("refreshToken", response.data.refreshToken);
@@ -65,6 +67,7 @@ export default class AuthStore {
 
       this.setAuth(true);
       this.setUser(response.data.employee);
+      this.setStatusEmployee(1);
       this.setWorkstation(response.data.workstation);
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -87,9 +90,7 @@ export default class AuthStore {
 
   async logout() {
     try {
-      const response = await AuthService.logout(String(this.user.employee_id));
-      // eslint-disable-next-line no-console
-      console.log(response);
+      await AuthService.logout(String(this.user.employee_id));
 
       localStorage.removeItem("token");
       localStorage.removeItem("refreshToken");
@@ -141,17 +142,77 @@ export default class AuthStore {
     runInAction(() => {
       if (!response.success) {
         this._meta = Meta.error;
-        // eslint-disable-next-line no-console
-        console.log("error getClient");
       }
       try {
-        this.setClient(response.data);
+        this.setClient({
+          number_ticket: response.data.number_ticket,
+          service_ticket: response.data.service_ticket,
+          number_queue: response.data.number_queue,
+        });
+        this.setStatusEmployee(response.data.employee_status);
         this._meta = Meta.success;
         return;
       } catch (e) {
         this._meta = Meta.error;
         // eslint-disable-next-line no-console
         console.log("error getClient");
+      }
+    });
+  }
+
+  async confirmClient(numberQueue: number): Promise<void> {
+    this._meta = Meta.loading;
+    const response = await this.apiStore.request<IClient>({
+      method: HTTPMethod.POST,
+      data: { numberQueue: `${numberQueue}` },
+      headers: {},
+      endpoint: `/auth/employee/confirmClient`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+        // eslint-disable-next-line no-console
+        console.log("error confirmClient");
+      }
+      try {
+        this.setStatusEmployee(response.data);
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+        // eslint-disable-next-line no-console
+        console.log("error confirmClient");
+      }
+    });
+  }
+
+  async endClient(): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<IClient>({
+      method: HTTPMethod.POST,
+      data: {},
+      headers: {},
+      endpoint: `/auth/employee/endClient`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+        // eslint-disable-next-line no-console
+        console.log("error endClient");
+      }
+      try {
+        this.setStatusEmployee(response.data);
+        this.client.number_ticket = -2;
+
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+        // eslint-disable-next-line no-console
+        console.log("error endClient");
       }
     });
   }

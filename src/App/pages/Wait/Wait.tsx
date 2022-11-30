@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import WaitStore from "@store/WaitStore";
 import { observer } from "mobx-react-lite";
@@ -21,7 +21,7 @@ const Wait: React.FC<any> = () => {
 
   useEffect(() => {
     counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-    if (counter == 0) {
+    if (counter === 0) {
       navigate(`/reception`);
     }
   }, [counter]);

@@ -18,9 +18,6 @@ const StartPage: React.FC<any> = () => {
     workstationStore.getWorkstationList().then();
   }, []);
 
-  // eslint-disable-next-line no-console
-  console.log(workstationStore.list);
-
   return (
     <div className="start-page" key="start-page">
       <div className="start-page-header">

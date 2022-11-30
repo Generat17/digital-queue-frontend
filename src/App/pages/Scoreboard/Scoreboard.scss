@@ -10,6 +10,10 @@ $color-background-header: #E01B1A;
   align-items: center;
   font-size: 2.5em;
 
+  .number {
+    margin-left: 200px;
+  }
+
   h2 {
     padding: 0 0 0 200px;
   }
@@ -35,7 +39,7 @@ $color-background-header: #E01B1A;
     h3 {
       font-size: 2.5em;
       padding: 0 0 0 10%;
-      left: 1700px;
+      left: 1240px;
       position: absolute;
     }
   }

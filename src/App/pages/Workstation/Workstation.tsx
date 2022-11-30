@@ -45,6 +45,10 @@ export const Workstation: React.FC<any> = () => {
       workstation={authStore.workstation}
       onClickButtonLogout={() => authStore.logout()}
       getClient={() => authStore.getClient()}
+      confirmClient={() =>
+        authStore.confirmClient(authStore.client.number_queue)
+      }
+      endClient={() => authStore.endClient()}
       client={authStore.client}
     />
   );
