@@ -176,7 +176,7 @@ export default class AuthStore {
         console.log("error confirmClient");
       }
       try {
-        this.setStatusEmployee(response.data);
+        this.setStatusEmployee(response.data.number_queue);
         this._meta = Meta.success;
         return;
       } catch (e) {
@@ -204,7 +204,7 @@ export default class AuthStore {
         console.log("error endClient");
       }
       try {
-        this.setStatusEmployee(response.data);
+        this.setStatusEmployee(response.data.number_queue);
         this.client.number_ticket = -2;
 
         this._meta = Meta.success;
