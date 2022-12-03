@@ -1,0 +1,170 @@
+.workstation-admin-content-body-responsibilities {
+  margin: 50px;
+
+  .workstation-admin-content-body-responsibilities-table {
+    text-align: left;
+
+    th, td {
+      border: 1px solid black;
+      font-size: 20px;
+      padding: 20px;
+    }
+
+    .update {
+      color: #ffbf00;
+      border: 1px solid black;
+    }
+
+    .delete {
+      color: red;
+      border: 1px solid black;
+    }
+
+  }
+
+  .workstation-admin-content-body-responsibilities-button-add {
+    font-size: 22px;
+    border: solid 1px black;
+    width: 260px;
+    margin: 10px 0px 0px 5px;
+    padding: 5px 0 5px 25px;
+    font-weight: bold;
+    color: #52c938;
+  }
+}
+
+.removeWindow {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .response {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    h2 {
+      font-size: 35px;
+    }
+
+    .buttonYes {
+      background: green;
+      padding-top: 10px;
+      border-radius: 20px;
+      text-align: center;
+      height: 50px;
+      width: 150px;
+      color: black;
+      border: solid 2px black;
+      font-weight: bold;
+      margin: 0 20px;
+    }
+
+    .buttonNo {
+      margin: 0 20px;
+      font-weight: bold;
+      text-align: center;
+      background: red;
+      padding-top: 10px;
+      height: 50px;
+      width: 150px;
+      border-radius: 20px;
+      color: black;
+      border: solid 2px black;
+    }
+  }
+}
+
+.updateWindow {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  font-size: 30px;
+
+  input {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  th, td {
+    border: 1px solid black;
+    font-size: 30px;
+    padding: 20px;
+  }
+
+  .control {
+
+    display: flex;
+
+    .saveButton {
+      background: #52c938;
+      text-align: center;
+      color: black;
+      border: solid 2px black;
+      font-weight: bold;
+      border-radius: 20px;
+      width: 200px;
+      margin: 20px auto 0 auto;
+    }
+
+    .cancelButton {
+      background: #3a61ff;
+      text-align: center;
+      color: black;
+      border: solid 2px black;
+      font-weight: bold;
+      border-radius: 20px;
+      width: 200px;
+      margin: 20px auto 0 auto;
+    }
+  }
+}
+
+.addWindow {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  font-size: 30px;
+
+  h1 {
+    font-size: 30px;
+  }
+
+  input {
+    font-size: 30px;
+    font-weight: bold;
+    width: 470px;
+    margin-top: 20px;
+  }
+
+  .control {
+
+    display: flex;
+
+    .saveButton {
+      background: #52c938;
+      text-align: center;
+      color: black;
+      border: solid 2px black;
+      font-weight: bold;
+      border-radius: 20px;
+      width: 200px;
+      margin: 20px auto 0 auto;
+    }
+
+    .cancelButton {
+      background: #3a61ff;
+      text-align: center;
+      color: black;
+      border: solid 2px black;
+      font-weight: bold;
+      border-radius: 20px;
+      width: 200px;
+      margin: 20px auto 0 auto;
+    }
+  }
+}

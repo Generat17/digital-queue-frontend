@@ -1,21 +1,19 @@
 $color-background-header: #E01B1A;
 $color-background-content: #F1F1F1;
 
-.workstation-menu {
+.workstation-admin {
   background: $color-background-content;
   width: 100%;
   height: 100%;
-  position: relative;
 
-  .workstation-menu-header {
+  .workstation-admin-header {
     height: 100px;
     background: $color-background-header;
     display: flex;
     justify-content: space-between;
-
     color: white;
 
-    .workstation-menu-header-name {
+    .workstation-admin-header-name {
       font-size: 40px;
       font-weight: bold;
       font-family: Calibri;
@@ -24,7 +22,7 @@ $color-background-content: #F1F1F1;
       margin-left: 50px;
     }
 
-    .workstation-menu-header-workstation-name {
+    .workstation-admin-header-workstation-name {
       font-size: 40px;
       font-weight: bold;
       font-family: Calibri;
@@ -32,7 +30,7 @@ $color-background-content: #F1F1F1;
       padding: 25px 0;
     }
 
-    .workstation-menu-header-employee-name {
+    .workstation-admin-header-employee-name {
       font-size: 40px;
       font-weight: bold;
       font-family: Calibri;
@@ -40,48 +38,59 @@ $color-background-content: #F1F1F1;
       padding: 25px 0;
     }
 
-    .workstation-menu-header-button-logout {
+    .workstation-admin-header-button-logout {
       margin-right: 50px;
       margin-top: 25px;
       border-radius: 10px;
-      width: 100px;
+      width: 150px;
       height: 50px;
+      font-weight: bold;
+      font-size: 25px;
     }
 
   }
 
-  .workstation-menu-content {
-    .workstation-menu-content-info {
+  .workstation-admin-content {
+    height: 82%;
+    display: flex;
 
-      margin-left: 70px;
-      margin-top: 20px;
+    .workstation-admin-content-menu {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-right: solid 3px white;
+      width: 14%;
+      height: 100%;
+      background: #cec4c4;
 
-      h2 {
-        font-size: 30px;
+      .workstation-admin-content-menu-button {
+        padding: 15px 0px 15px 25px;
+        border-radius: 20px;
+        background: white;
+        border: solid 1px black;
+        font-size: 25px;
+        font-weight: bold;
+        margin: 10px 0;
       }
 
-      th, td {
-        border: 1px solid;
-        font-size: 20px;
+      .defaultButton {
+        background: white;
+        color: black;
       }
 
-      th:first-child {
-        padding: 0 5px;
-        text-align: left;
+      .selectButton {
+        background: #E01B1A;
+        color: white;
       }
+    }
 
-      th:last-child {
-        padding: 0 5px;
-        text-align: left;
-      }
-
-      .workstation-menu-content-info-table {
-
-      }
+    .workstation-admin-content-body {
+      height: 100%;
+      width: 100%;
     }
   }
 
-  .workstation-menu-footer {
+  .workstation-admin-footer {
     background: $color-background-header;
     position: absolute;
     bottom: 0;

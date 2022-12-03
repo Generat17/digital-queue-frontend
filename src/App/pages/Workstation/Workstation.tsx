@@ -4,6 +4,7 @@ import AuthStore from "@store/AuthStore";
 import { observer } from "mobx-react-lite";
 import { useParams } from "react-router-dom";
 
+import Admin from "./components/Admin";
 import LogIn from "./components/LogIn";
 import Menu from "./components/Menu";
 
@@ -40,17 +41,27 @@ export const Workstation: React.FC<any> = () => {
   }
 
   return (
-    <Menu
-      employee={authStore.user}
-      workstation={authStore.workstation}
-      onClickButtonLogout={() => authStore.logout()}
-      getClient={() => authStore.getClient()}
-      confirmClient={() =>
-        authStore.confirmClient(authStore.client.number_queue)
-      }
-      endClient={() => authStore.endClient()}
-      client={authStore.client}
-    />
+    <>
+      {authStore.user.is_admin ? (
+        <Admin
+          employee={authStore.user}
+          workstation={authStore.workstation}
+          onClickButtonLogout={() => authStore.logout()}
+        />
+      ) : (
+        <Menu
+          employee={authStore.user}
+          workstation={authStore.workstation}
+          onClickButtonLogout={() => authStore.logout()}
+          getClient={() => authStore.getClient()}
+          confirmClient={() =>
+            authStore.confirmClient(authStore.client.number_queue)
+          }
+          endClient={() => authStore.endClient()}
+          client={authStore.client}
+        />
+      )}
+    </>
   );
 };
 
