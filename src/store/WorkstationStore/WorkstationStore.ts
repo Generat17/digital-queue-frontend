@@ -89,6 +89,84 @@ export default class WorkstationStore
     });
   }
 
+  async removeWorkstation(workstationId: number): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: { workstationId: `${workstationId.toString()}` },
+      headers: {},
+      endpoint: `/auth/workstation/remove`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
+  async addWorkstation(workstationName: string): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: { workstationName: `${workstationName}` },
+      headers: {},
+      endpoint: `/auth/workstation/add`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
+  async updateWorkstation(
+    workstationId: number,
+    workstationName: string
+  ): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: {
+        responsibilityId: `${workstationId.toString()}`,
+        responsibilityName: `${workstationName}`,
+      },
+      headers: {},
+      endpoint: `/auth/workstation/update`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
   destroy(): void {
     // nothing to do
   }

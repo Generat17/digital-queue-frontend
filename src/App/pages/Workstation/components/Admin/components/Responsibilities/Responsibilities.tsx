@@ -20,7 +20,7 @@ const Responsibilities: React.FC<any> = () => {
 
   useEffect(() => {
     responsibilityStore.getResponsibilityList().then();
-  }, []);
+  }, [hideBody]);
 
   return (
     <>
@@ -35,8 +35,12 @@ const Responsibilities: React.FC<any> = () => {
               <div
                 className="buttonYes"
                 onClick={() => {
-                  setHideBody(true);
                   setHideRemoveWindow(false);
+                  responsibilityStore
+                    .removeResponsibility(selectedResponsibilityId)
+                    .then(() => {
+                      setHideBody(true);
+                    });
                 }}
               >
                 <h2>Да</h2>
@@ -81,8 +85,9 @@ const Responsibilities: React.FC<any> = () => {
               <div
                 className="cancelButton"
                 onClick={() => {
-                  setHideBody(true);
                   setHideUpdateWindow(false);
+                  setHideBody(true);
+                  setValueResponsibilityName("");
                 }}
               >
                 Назад
@@ -90,8 +95,16 @@ const Responsibilities: React.FC<any> = () => {
               <div
                 className="saveButton"
                 onClick={() => {
-                  setHideBody(true);
                   setHideUpdateWindow(false);
+                  responsibilityStore
+                    .updateResponsibility(
+                      selectedResponsibilityId,
+                      valueResponsibilityName
+                    )
+                    .then(() => {
+                      setHideBody(true);
+                    });
+                  setValueResponsibilityName("");
                 }}
               >
                 Сохранить
@@ -118,6 +131,7 @@ const Responsibilities: React.FC<any> = () => {
                 onClick={() => {
                   setHideBody(true);
                   setHideAddWindow(false);
+                  setValueResponsibilityName("");
                 }}
               >
                 Назад
@@ -126,8 +140,13 @@ const Responsibilities: React.FC<any> = () => {
               <div
                 className="saveButton"
                 onClick={() => {
-                  setHideBody(true);
                   setHideAddWindow(false);
+                  responsibilityStore
+                    .addResponsibility(valueResponsibilityName)
+                    .then(() => {
+                      setHideBody(true);
+                    });
+                  setValueResponsibilityName("");
                 }}
               >
                 Добавить

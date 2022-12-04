@@ -84,6 +84,84 @@ export default class ResponsibilityStore
     });
   }
 
+  async removeResponsibility(responsibilityId: number): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: { responsibilityId: `${responsibilityId.toString()}` },
+      headers: {},
+      endpoint: `/auth/responsibility/remove`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
+  async addResponsibility(responsibilityName: string): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: { responsibilityName: `${responsibilityName}` },
+      headers: {},
+      endpoint: `/auth/responsibility/add`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
+  async updateResponsibility(
+    responsibilityId: number,
+    responsibilityName: string
+  ): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: {
+        responsibilityId: `${responsibilityId.toString()}`,
+        responsibilityName: `${responsibilityName}`,
+      },
+      headers: {},
+      endpoint: `/auth/responsibility/update`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
   destroy(): void {
     // nothing to do
   }
