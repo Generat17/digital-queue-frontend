@@ -38,11 +38,23 @@ $color-background-content: #F1F1F1;
       position: relative;
       margin-top: 20px;
 
-      button {
+      .button-back {
+        position: absolute;
+        left: 0;
+        height: 50px;
+        width: 190px;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: Calibri;
+        border-radius: 20px;
+        background: white;
+      }
+
+      .button-login {
         position: absolute;
         right: 0;
         height: 50px;
-        width: 200px;
+        width: 190px;
         font-size: 25px;
         font-weight: bold;
         font-family: Calibri;

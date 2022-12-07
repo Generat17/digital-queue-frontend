@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23f89e22-0903-4ad3-881b-3979bc8aa73f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/pages/Test/Test.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Responsibilities/Responsibilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Responsibilities/Responsibilities.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Responsibilities/Responsibilities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Responsibilities/Responsibilities.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Test/Test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Test/Test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Workstations/Workstations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Workstations/Workstations.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Workstations/Workstations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/Admin/components/Workstations/Workstations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/pages/Workstation/components/LogIn/LogIn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/workstationModel/workstationItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/workstationModel/workstationItem.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ResponsibilityStore/ResponsibilityStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ResponsibilityStore/ResponsibilityStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/WorkstationStore/WorkstationStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/WorkstationStore/WorkstationStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,6 +144,7 @@
       <workItem from="1670171376988" duration="2215000" />
       <workItem from="1670174279118" duration="4627000" />
       <workItem from="1670180403424" duration="1800000" />
+      <workItem from="1670414718651" duration="23261000" />
     </task>
     <servers />
   </component>

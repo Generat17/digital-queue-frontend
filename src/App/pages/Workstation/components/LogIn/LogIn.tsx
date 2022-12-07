@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import Input from "./components/Input";
 
 import "./LogIn.scss";
@@ -49,7 +51,12 @@ const LogIn: React.FC<LogInProps> = ({
           key="passwordInput"
         />
         <div className="workstation-login-content-button">
-          <button onClick={onClick}>Войти</button>
+          <Link to={`/`}>
+            <button className="button-back">Назад</button>
+          </Link>
+          <button onClick={onClick} className="button-login">
+            Войти
+          </button>
         </div>
       </div>
     </div>

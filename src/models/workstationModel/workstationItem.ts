@@ -1,17 +1,20 @@
+export type WorkstationResponsibilityItem = {
+  workstation_responsibility_id: number;
+  workstation_responsibility_name: string;
+};
+
 export type WorkstationApi = {
   workstation_id: number;
   employee_id: number;
   workstation_name: string;
-  responsibility_list: number[];
-  responsibility_list_name: string[];
+  responsibility_list: WorkstationResponsibilityItem[];
 };
 
 export type WorkstationModel = {
   workstationId: number;
   employeeId: number;
   workstationName: string;
-  responsibilityList: number[];
-  responsibilityListName: string[];
+  responsibilityList: WorkstationResponsibilityItem[];
 };
 
 export const normalizeWorkstation = (
@@ -21,5 +24,4 @@ export const normalizeWorkstation = (
   employeeId: from.employee_id,
   workstationName: from.workstation_name,
   responsibilityList: from.responsibility_list,
-  responsibilityListName: from.responsibility_list_name,
 });

@@ -15,6 +15,11 @@ const Workstations: React.FC<any> = () => {
   const [hideUpdateWindow, setHideUpdateWindow] = useState<boolean>(false);
   const [hideAddWindow, setHideAddWindow] = useState<boolean>(false);
   const [hideRemoveWindow, setHideRemoveWindow] = useState<boolean>(false);
+  const [hideChangeWindow, setHideChangeWindow] = useState<boolean>(false);
+
+  // Состояние списка
+  const [checked, setChecked] = useState<string[]>([]);
+  const [checkList, setCheckList] = useState<string[]>([]);
 
   const [selectedWorkstationId, setSelectedWorkstationId] =
     useState<number>(-1);
@@ -28,8 +33,45 @@ const Workstations: React.FC<any> = () => {
     workstationStore.getWorkstationList().then();
   }, [hideBody]);
 
+  const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let updatedListName = [...checked];
+    if (event.target.checked) {
+      updatedListName = [...checked, event.target.value];
+    } else {
+      updatedListName.splice(checked.indexOf(event.target.value), 1);
+    }
+    setChecked(updatedListName);
+  };
+
+  // Generate string of checked items
+  const checkedItems = checked.length
+    ? checked.reduce((total, item) => {
+        return total + ", " + item;
+      })
+    : "";
+
+  // Return classes based on whether item is checked
+  const isChecked = (item: string) =>
+    checked.includes(item) ? "checked-item" : "not-checked-item";
+
   return (
     <>
+      {hideChangeWindow && (
+        <div className="list-container">
+          {checkList.map((item, index) => (
+            <div key={index}>
+              <input
+                value={item}
+                type="checkbox"
+                onChange={handleCheck}
+                checked={checked.includes(item)}
+              />
+              <span className={isChecked(item)}>{item}</span>
+            </div>
+          ))}
+          <div>{`Items checked are: ${checkedItems}`}</div>
+        </div>
+      )}
       {hideRemoveWindow && (
         <div className="removeWindow">
           <div>
@@ -167,8 +209,8 @@ const Workstations: React.FC<any> = () => {
             <tbody>
               <tr>
                 <th>ID</th>
-                <th>Название услуги</th>
-                <th></th>
+                <th>Название рабочей станции</th>
+                <th>Список услуг</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -177,11 +219,47 @@ const Workstations: React.FC<any> = () => {
                   <th>{it.workstationId}</th>
                   <th>{it.workstationName}</th>
                   <th>
-                    <select>
-                      {it.responsibilityListName?.map((el) => (
-                        <option>{el}</option>
+                    <div className="responsibility-list-name">
+                      {it.responsibilityList?.map((el) => (
+                        <h4>
+                          <b
+                            onClick={() => {
+                              workstationStore
+                                .removeWorkstationResponsibility(
+                                  it.workstationId.toString(),
+                                  el.workstation_responsibility_id.toString()
+                                )
+                                .then();
+                            }}
+                          >
+                            X
+                          </b>{" "}
+                          {el.workstation_responsibility_name}
+                        </h4>
                       ))}
-                    </select>
+                      <div>
+                        <h4>
+                          <strong
+                            onClick={() => {
+                              setHideChangeWindow(true);
+                              setHideBody(false);
+                              setSelectedWorkstationId(it.workstationId);
+                              responsibilityStore.list.map((el) => {
+                                checkList.push(el.name);
+                              });
+                              it.responsibilityList.map((el) => {
+                                checked.push(
+                                  el.workstation_responsibility_name
+                                );
+                              });
+                            }}
+                          >
+                            +
+                          </strong>{" "}
+                          Добавить услугу
+                        </h4>
+                      </div>
+                    </div>
                   </th>
                   <th
                     className="delete"

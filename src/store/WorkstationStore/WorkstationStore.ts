@@ -167,6 +167,66 @@ export default class WorkstationStore
     });
   }
 
+  async addWorkstationResponsibility(
+    workstationId: number,
+    responsibilityId: number
+  ): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: {
+        workstationId: `${workstationId.toString()}`,
+        responsibilityId: `${responsibilityId.toString()}`,
+      },
+      headers: {},
+      endpoint: `/auth/workstationResponsibility/add`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
+  async removeWorkstationResponsibility(
+    workstationId: string,
+    responsibilityId: string
+  ): Promise<void> {
+    this._meta = Meta.loading;
+
+    const response = await this.apiStore.request<string>({
+      method: HTTPMethod.POST,
+      data: {
+        workstationId: `${workstationId.toString()}`,
+        responsibilityId: `${responsibilityId.toString()}`,
+      },
+      headers: {},
+      endpoint: `/auth/workstationResponsibility/remove`,
+    });
+
+    runInAction(() => {
+      if (!response.success) {
+        this._meta = Meta.error;
+      }
+
+      try {
+        this._meta = Meta.success;
+        return;
+      } catch (e) {
+        this._meta = Meta.error;
+      }
+    });
+  }
+
   destroy(): void {
     // nothing to do
   }
